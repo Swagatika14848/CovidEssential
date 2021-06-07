@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewData["Title"] = "Discount";
+}
+
+
+<head>
+    <link href="~/lib/bootstrap/fontawesome-free-5.15.3-web/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/covidstyle.css" rel="stylesheet" />
+
+</head>
+
+<style>
+    .container h2 {
+    color:#ff7200;
+    font-family:cursive;
+    text-align:center;
+    margin-top:30px;
+    margin-bottom: 30px;
+
+    }
+    .discount_pic img {
+        min-width: 100%;
+        height: 100%;
+    }
+
+    .discount_text {
+        background-color: #f4f4f4;
+        height: 390px;
+        padding: 75px 90px 50px;
+        text-align: center;
+    }
+
+        .discount_text a {
+            font-size: 14px;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            padding: 0 0 3px;
+            display: inline-block;
+        }
+
+        .discount_text .discount_text_title {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 60px;
+        }
+
+            .discount_text .discount_text_title::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: -38px;
+                height: 183px;
+                width: 183px;
+                background-color: #fff;
+                z-index: -1;
+                margin-left: -90px;
+            }
+
+    .discount_text_title .discount_text_title span {
+        font-size: 20px;
+        color: #000;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .discount_text .discount_text_title h2 {
+        font-size: 55px;
+        color: #ff7200;
+        margin-bottom: 10px;
+    }
+
+    .discount_text .discount_text_title h5 span {
+        color: #000;
+        font-size: 18px;
+        margin-right: 5px;
+    }
+
+    .discount_text .discount_text_title h5 {
+        color: #ff7200;
+        font-weight: 700;
+    }
+
+    .discount_countdown {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+        .discount_countdown .countdown_item {
+            margin-bottom: 15px;
+            float: left;
+            width: 25%;
+        }
+
+            .discount_countdown .countdown_item:last-child {
+                margin-right: 0;
+            }
+
+            .discount_countdown .countdown_item span {
+                font-size: 30px;
+                font-weight: 600;
+                color: #000;
+                display: inline-block;
+            }
+
+            .discount_countdown .countdown_item p {
+                color: #000;
+                margin-bottom: 0;
+                display: inline-block;
+                font-weight: 500;
+            }
+</style>
+<section class="discount">
+    <div class="container">
+        <h2>Discount & Offers</h2>
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <div class="discount_pic">
+                    <img src="/lib/Images/discount.jpg" class="img-fluid">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="discount_text">
+                    <div class="discount_text_title">
+                        <span>Discount</span>
+                        <h2>Covid 2019 Offer</h2>
+                        <h5><span>Sale</span> 60% OFF</h5>
+
+                    </div>
+
+                    <div class="discount_countdown" id="countdown-time">
+                        <div class="countdown_item">
+                            <span>22</span>
+                            <p>Days</p>
+                        </div>
+                        <div class="countdown_item">
+                            <span>18</span>
+                            <p>Hours</p>
+                        </div>
+                        <div class="countdown_item">
+                            <span>46</span>
+                            <p>Min</p>
+                        </div>
+                        <div class="countdown_item">
+                            <span>5</span>
+                            <p>Sec</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/popper.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery/dist/owl.carousel.min.js"></script>
+
+
+
+
+

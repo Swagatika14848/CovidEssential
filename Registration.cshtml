@@ -1,0 +1,254 @@
+﻿@model IEnumerable<E_CommerceClient.Models.UserDetail>
+@{
+    ViewData["Title"] = "Registration";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<h1>Registration Page</h1>
+
+<h3 style="color:blue;text-align:center">Client Test App</h3>
+<div>
+    <h4>Register at Covid essential store</h4>
+    <table id="RegistrationTable"></table>
+</div>
+
+<div class="container" style="margin-top:10%">
+    <div class="row">
+        <div class="col-md-4 col-sm-offset-4 alert alert-info">
+            <h3 class="text-center">
+                Login
+            </h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <div class="input">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="form-control" type="email" name="Email" id="UserEmail" placeholder="Enter Email" />
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control" type="password" name="Password" id="UserPassword" placeholder="Enter Password" />
+                    </div>
+                </div>
+
+            </form>
+            <div class="form-group">
+                <button class="btn btn-info form-control">
+                    <i class="glyphicon glyphicon-log-in"></i>
+                    Login
+                </button>
+
+                <div class="form-control">
+                    <a style="float:left">
+                        Forget Password ? </a>
+                    <a style="float:right; cursor:pointer" onclick="SignUp()">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="ShowModel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="model-header">
+                <a href="#" class="close" data-dismiss="modal">
+                    &times;
+                </a>
+                <h4>
+                    Registration Form
+                </h4>
+                <div id="message1">
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-ok">></span><strong>Success Message! your Registraion is Complete</strong>
+                    </div>
+                </div>
+
+                <div id="message2">
+                    <div class="alert alert-danger">
+                        <span class="glyphicon glyphicon-ok">></span><strong>Error Message! Failed to complete registration</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="model-body">
+
+                <form id="Registration">
+                    <div class="form-group">
+                        <div class="input">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="form-control" type="text" name="Name" id="txtUserName" placeholder="Enter Name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input class="form-control" type="password" name="Password" id="txtUserPassword" placeholder="Enter Password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input class="form-control" type="email" name="Email" id="txtUserEmail" placeholder="Enter Email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input class="form-control" type="number" name="Contact" id="txtUserContact" placeholder="Enter Contact" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input class="form-control" type="text" name="Address" id="txtUserAddress" placeholder="Enter Address" />
+                        </div>
+                    </div>
+
+                </form>
+                <div class="form-group">
+                    <button class="btn btn-info form-control" type="submit" onclick="SaveForm();"><i class="glyphicon glyphicon-registration-mark"></i>Submit</button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+@*<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtUserName" placeholder="Enter Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="txtUserPassword" placeholder="Enter password">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="txtUserEmail" placeholder="Enter Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="contact">Contact:</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="txtUserContact" placeholder="Enter Contact">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="address">Address:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtUserAddress" placeholder="Enter Address">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-dark" onclick="RegisterUser();">Register</button>
+        </div>
+    </div>
+</form>*@
+
+
+<script>
+
+    function RegisterUser() {
+        var uName = $('#txtUserName').val();
+        var uPassword = $('#txtUserPassword').val();
+        var uEmail = $('#txtUserEmail').val();
+        var uContact = $('#txtUserContact').val();
+        var uAddress = $('#txtUserAddress').val();
+
+        //javascript object
+        var user = { UserName: uName, UserPassword: uPassword, UserEmail: uEmail, UserContact: uContact, UserAddress: uAddress, RoleId:1};
+
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:44309/api/UserDetails",
+            contentType: "application/json; charset=uft-8",
+            dataType: "json",
+            data: JSON.stringify(user),
+            success: function () {
+                alert("User Registered Successfully")
+
+            },
+            error: function (jqxhr) {
+                alert("error : " + jqxhr.status + " : " + jqxhr.statusText);
+                return false;
+            }
+        });
+
+    }
+
+
+    function SignUp() {
+        $("#ShowModel").modal();
+        $("#message1").hide();
+        $("#message2").hide();
+
+    }
+    function SaveForm() {
+        
+            var uName = $('#txtUserName').val();
+            var uPassword = $('#txtUserPassword').val();
+            var uEmail = $('#txtUserEmail').val();
+            var uContact = $('#txtUserContact').val();
+            var uAddress = $('#txtUserAddress').val();
+        if (uName == "" || uPassword == "" || uEmail == " ") {
+            $("#message1").hide();
+            $("#message2").show();
+            return false;
+
+        }
+            //javascript object
+            var user = { UserName: uName, UserPassword: uPassword, UserEmail: uEmail, UserContact: uContact, UserAddress: uAddress, RoleId: 1};
+
+            $.ajax({
+                type: "POST",
+                url: "",
+                contentType: "application/json; charset=uft-8",
+                dataType: "json",
+                data: JSON.stringify(user),
+                success: function () {
+                    alert("User Registered Successfully")
+                    $("#message1").show();
+                    $("#message2").hide();
+                    $("#user")[0].reset();
+
+
+                },
+                error: function (jqxhr) {
+                    alert("error : " + jqxhr.status + " : " + jqxhr.statusText);
+                    return false;
+                }
+                 });
+
+        }
+
+    
+
+    </script>
+
+    
+
+
+

@@ -1,0 +1,58 @@
+﻿@model E_CommerceClient.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<h1>Register</h1>
+
+<form asp-controller="Account" asp-action="Register" method="post">
+    <div style="color:red;" asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td><label asp-for="UserName"></label></td>
+            <td><input asp-for="UserName" /></td>
+
+        </tr>
+
+        <tr>
+            <td><label asp-for="UserPassword"></label></td>
+            <td><input asp-for="UserPassword" /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="ConfirmPassword"></label></td>
+            <td><input asp-for="ConfirmPassword" /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="UserEmail"></label></td>
+            <td><input asp-for="UserEmail" /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="UserContact"></label></td>
+            <td><input asp-for="UserContact" /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="UserAddress"></label></td>
+            <td><input asp-for="UserAddress" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" />
+            </td>
+
+        </tr>
+
+
+    </table>
+
+</form>

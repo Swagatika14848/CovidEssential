@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<style>
+
+    .newsletter-area form {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+        .newsletter-area form p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            color: #ff7200;
+            font-weight: 600;
+        }
+
+    .subscribe-sec input {
+        padding: 25px;
+        color: #495057;
+        border-radius: 50px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        letter-spacing: 2px;
+        box-shadow: 1px 3px 8px rgba(0,0,0,0.15);
+    }
+        
+    .container h2
+    {
+        color: #ff7200;
+        font-family: cursive;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    
+</style>
+
+
+<section class="newsletter-area spad">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form method="post" action="#">
+            <p class="text-center">
+                Subscribe to us form mailing list to receive updates on new arrival, special offers and other discount information.
+            </p>
+            <div class="row subscribe-sec">
+                <div class="col-md-9">
+                    <input type="email" class="form-control" id="email"
+                           name="" placeholder="Enter you email...." required="">
+                </div>
+                <div class="col-md-3">
+
+                    <button type="submit" class="btn submit" onclick="ContactUs();">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+  
+    
+</section>
+
+<script>
+
+
+    function ContactUs() {
+        alert("“Thankyou ” for subscribing our channel");
+    }
+
+</script>
